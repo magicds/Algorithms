@@ -11,9 +11,10 @@ using namespace std;
 
 void main() {
 	int n = 10000;
-	int* arr = SortTestHelper::generateRandomArray(n, 0, n);
-	int* arr2 = SortTestHelper::copyIntArray(arr, n);
+	int *arr = SortTestHelper::generateRandomArray(n, 0, n);
+	int *arr2 = SortTestHelper::copyIntArray(arr, n);
 
+	cout << "正常数组排序,长度：" << n << endl;
 	SortTestHelper::printArray(arr, 10);
 
 	SortTestHelper::testSort("insertionSort", insertionSort, arr, n);
@@ -24,6 +25,23 @@ void main() {
 
 	delete arr;
 	delete arr2;
+
+	n = 10000;
+	int swapTimes = 100;
+	int *arr3 = SortTestHelper::generateNearlySortedArray(n, swapTimes);
+	int *arr4 = SortTestHelper::copyIntArray(arr3, n);
+
+	cout << "近乎有序数组排序,长度：" << n << "，其中被打乱的顺序的个数：" << swapTimes << endl;
+	SortTestHelper::printArray(arr3, 10);
+
+	SortTestHelper::testSort("insertionSort", insertionSort, arr3, n);
+	SortTestHelper::testSort("selectionSort", selectionSort, arr4, n);
+
+	SortTestHelper::printArray(arr3, 10);
+	SortTestHelper::printArray(arr4, 10);
+
+	delete arr3;
+	delete arr4;
 	system("pause");
 }
 
