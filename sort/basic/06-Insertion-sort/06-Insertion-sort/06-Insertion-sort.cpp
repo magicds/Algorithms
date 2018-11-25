@@ -23,8 +23,8 @@ void main() {
 	SortTestHelper::printArray(arr, 10);
 	SortTestHelper::printArray(arr2, 10);
 
-	delete arr;
-	delete arr2;
+	delete[] arr;
+	delete[] arr2;
 
 	n = 10000;
 	int swapTimes = 100;
@@ -40,8 +40,8 @@ void main() {
 	SortTestHelper::printArray(arr3, 10);
 	SortTestHelper::printArray(arr4, 10);
 
-	delete arr3;
-	delete arr4;
+	delete[] arr3;
+	delete[] arr4;
 	system("pause");
 }
 

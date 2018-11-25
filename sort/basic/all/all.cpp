@@ -9,7 +9,7 @@ using namespace std;
 
 
 template <typename T>
-void bubbleSort(T arr[], int n) {
+void bubbleSort1(T arr[], int n) {
 	int c = 0;
 	for (int i = 0; i < n - 1; i++) {
 
@@ -57,11 +57,14 @@ void testBubble() {
 	std::cout << "初始数组:\n";
 	SortTestHelper::printArray(arr1, n);
 
-	SortTestHelper::testSort("bubbleSort", bubbleSort, arr1, n);
+	SortTestHelper::testSort("bubbleSort1", bubbleSort1, arr1, n);
 	SortTestHelper::testSort("bubbleSort2", bubbleSort2, arr2, n);
 
 	SortTestHelper::printArray(arr1, n);
 	SortTestHelper::printArray(arr2, n);
+
+	delete[] arr1;
+	delete[] arr2;
 }
 
 int main()
