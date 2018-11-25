@@ -15,6 +15,4 @@ void bubbleSort(T arr[], int n) {
 		}
 		n = newEndIdx;
 	} while (newEndIdx > 0);
-
-	cout << "Ñ­»·´ÎÊı:" << c << endl;
 }

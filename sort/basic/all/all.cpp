@@ -4,6 +4,9 @@
 #include "pch.h"
 #include <iostream>
 #include "sorttesthelper.h";
+#include "selectionSort.h";
+#include "insertionSort.h";
+#include "bubbleSort.h";
 
 using namespace std;
 
@@ -67,9 +70,62 @@ void testBubble() {
 	delete[] arr2;
 }
 
+
+void testSortedArr(int n) {
+	int swapTimes = 0;
+	cout << "\n\n 完全有序排序测试，长度：" << n << "，被打乱的元素对：" << swapTimes << endl;
+	int* arr = SortTestHelper::generateNearlySortedArray(n, swapTimes);
+	int* arr1 = SortTestHelper::copyIntArray(arr, n);
+	int* arr2 = SortTestHelper::copyIntArray(arr, n);
+
+	// SortTestHelper::testSort("selectionSort", selectionSort, arr, n);
+	SortTestHelper::testSort("bubbleSort", bubbleSort, arr1, n);
+	SortTestHelper::testSort("insertionSort", insertionSort, arr2, n);
+
+	delete[] arr;
+	delete[] arr1;
+	delete[] arr2;
+}
 int main()
 {
-	testBubble();
+	// testBubble();
+
+	int n = 10000;
+
+	cout << "\n 随机数组排序测试，长度：" << n << endl;
+	int* arr = SortTestHelper::generateRandomArray(n, 0, n);
+	int* arr1 = SortTestHelper::copyIntArray(arr, n);
+	int* arr2 = SortTestHelper::copyIntArray(arr, n);
+
+	SortTestHelper::testSort("selectionSort", selectionSort, arr, n);
+	SortTestHelper::testSort("bubbleSort", bubbleSort, arr1, n);
+	SortTestHelper::testSort("insertionSort", insertionSort, arr2, n);
+	delete[] arr;
+	delete[] arr1;
+	delete[] arr2;
+
+
+	n = 10000;
+	int swapTimes = 100;
+	cout << "\n\n 近乎有序数组排序测试，长度：" << n << "，被打乱的元素对：" << swapTimes << endl;
+	arr = SortTestHelper::generateNearlySortedArray(n, swapTimes);
+	arr1 = SortTestHelper::copyIntArray(arr, n);
+	arr2 = SortTestHelper::copyIntArray(arr, n);
+
+	SortTestHelper::testSort("selectionSort", selectionSort, arr, n);
+	SortTestHelper::testSort("bubbleSort", bubbleSort, arr1, n);
+	SortTestHelper::testSort("insertionSort", insertionSort, arr2, n);
+	delete[] arr;
+	delete[] arr1;
+	delete[] arr2;
+
+	// 有序数组排序测试
+	testSortedArr(pow(10, 4));
+	testSortedArr(pow(10, 5));
+	testSortedArr(pow(10, 6));
+	testSortedArr(pow(10, 7));
+	testSortedArr(pow(10, 8));
+
 
 	system("pause");
 }
