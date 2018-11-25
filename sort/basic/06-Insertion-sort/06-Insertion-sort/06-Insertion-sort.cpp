@@ -10,13 +10,17 @@
 using namespace std;
 
 void main() {
-	int n = 100000;
+	int n = 10000;
 	int* arr = SortTestHelper::generateRandomArray(n, 0, n);
 	int* arr2 = SortTestHelper::copyIntArray(arr, n);
 
+	SortTestHelper::printArray(arr, 10);
 
 	SortTestHelper::testSort("insertionSort", insertionSort, arr, n);
 	SortTestHelper::testSort("selectionSort", selectionSort, arr2, n);
+
+	SortTestHelper::printArray(arr, 10);
+	SortTestHelper::printArray(arr2, 10);
 
 	delete arr;
 	delete arr2;

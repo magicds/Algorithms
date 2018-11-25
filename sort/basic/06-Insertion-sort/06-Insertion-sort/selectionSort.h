@@ -1,4 +1,3 @@
-using namespace std;
 template<typename T>
 void selectionSort(T arr[], int n) {
 	for (int i = 0; i < n; ++i) {
@@ -8,6 +7,9 @@ void selectionSort(T arr[], int n) {
 				minIdx = j;
 		}
 
-		swap(arr[i], arr[minIdx]);
+		std::swap(arr[i], arr[minIdx]);
+		//T temp = arr[i];
+		//arr[i] = arr[minIdx];
+		//arr[minIdx] = temp;
 	}
 }
