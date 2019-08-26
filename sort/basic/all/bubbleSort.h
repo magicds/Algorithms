@@ -1,6 +1,6 @@
 #pragma once
 template <typename T>
-// Ã°ÅÝÅÅÐò
+// å†’æ³¡æŽ’åº
 void bubbleSort(T arr[], int n) {
 	int newEndIdx;
 	do {
@@ -8,8 +8,8 @@ void bubbleSort(T arr[], int n) {
 		for (int i = 0; i < n - 1; i++) {
 			if (arr[i] > arr[i + 1]) {
 				swap(arr[i], arr[i + 1]);
-				// ÄÚ²ãÑ­»·Íê³Éºó ×îºóÒÑ¾­ÊÇ×î´ó£¬ÏÂÒ»ÂÖÍâ²ãÎÞÐëÔÙ´Î½øÐÐ
-				// ¼ÇÂ¼×îºóÒ»´Î½»»»µÄ½áÊøÎ»ÖÃ ÓÃÓÚÓÅ»¯Íâ²ãÑ­»·µÄ±éÀú´ÎÊý
+				// å†…å±‚å¾ªçŽ¯å®ŒæˆåŽ æœ€åŽå·²ç»æ˜¯æœ€å¤§ï¼Œä¸‹ä¸€è½®å¤–å±‚æ— é¡»å†æ¬¡è¿›è¡Œ
+				// è®°å½•æœ€åŽä¸€æ¬¡äº¤æ¢çš„ç»“æŸä½ç½® ç”¨äºŽä¼˜åŒ–å¤–å±‚å¾ªçŽ¯çš„éåŽ†æ¬¡æ•°
 				newEndIdx = i + 1;
 			}
 		}

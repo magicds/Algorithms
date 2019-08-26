@@ -8,7 +8,7 @@ using namespace std;
 
 namespace SortTestHelper {
 
-	// 生成有n个元素的随机数组,每个元素的随机范围为[rangeL, rangeR]
+	// 鐢熸垚鏈塶涓厓绱犵殑闅忔満鏁扮粍,姣忎釜鍏冪礌鐨勯殢鏈鸿寖鍥翠负[rangeL, rangeR]
 	int *generateRandomArray(int n, int range_l, int range_r) {
 
 		int *arr = new int[n];
@@ -18,7 +18,7 @@ namespace SortTestHelper {
 			arr[i] = rand() % (range_r - range_l + 1) + range_l;
 		return arr;
 	}
-	// 生成一个近乎有序的数组
+	// 鐢熸垚涓�涓繎涔庢湁搴忕殑鏁扮粍
 	int *generateNearlySortedArray(int n, int swapTimes) {
 		int *arr = new int[n];
 
@@ -36,13 +36,25 @@ namespace SortTestHelper {
 		return arr;
 	}
 
-	// 定义数组打印函数
+	// 瀹氫箟鏁扮粍鎵撳嵃鍑芥暟
 	template <typename T>
 	void printArray(T arr[], int n) {
 		for (int i = 0; i < n; i++)
 			cout << arr[i] << " ";
 		cout << endl;
 		return;
+	}
+
+	// 鍒よ鏄惁鎺掑簭鎴愬姛
+	// 鍒ゆ柇arr鏁扮粍鏄惁鏈夊簭
+	template<typename T>
+	bool isSorted(T arr[], int n) {
+
+		for (int i = 0; i < n - 1; i++)
+			if (arr[i] > arr[i + 1])
+				return false;
+
+		return true;
 	}
 
 	template<typename T>
@@ -59,19 +71,8 @@ namespace SortTestHelper {
 		return;
 	}
 
-	// 判读是否排序成功
-	// 判断arr数组是否有序
-	template<typename T>
-	bool isSorted(T arr[], int n) {
 
-		for (int i = 0; i < n - 1; i++)
-			if (arr[i] > arr[i + 1])
-				return false;
-
-		return true;
-	}
-
-	// 整形数组拷贝
+	// 鏁村舰鏁扮粍鎷疯礉
 	int* copyIntArray(int a[], int n) {
 		int * arr = new int[n];
 		// copy(a, a + n, arr);

@@ -35,3 +35,6 @@
 **/.vs
 **/Debug
 **/Release
+
+## Vs code mac
+*.dSYM

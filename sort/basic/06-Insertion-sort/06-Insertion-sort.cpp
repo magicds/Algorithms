@@ -1,15 +1,13 @@
-﻿// 06-Insertion-sort.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+// 06-Insertion-sort.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
-
-#include "pch.h"
 #include <iostream>
 #include "selectionSort.h"
-#include "SortTestHelper.h"
+#include "sorttesthelper.h"
 #include "insertionSort.h"
 
 using namespace std;
 
-void main() {
+int main() {
 	int n = 10000;
 	int *arr = SortTestHelper::generateRandomArray(n, 0, n);
 	int *arr2 = SortTestHelper::copyIntArray(arr, n);
@@ -43,6 +41,7 @@ void main() {
 	delete[] arr3;
 	delete[] arr4;
 	system("pause");
+	return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

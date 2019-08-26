@@ -8,6 +8,30 @@ using namespace std;
 
 namespace SortTestHelper {
 
+	// 判读是否排序成功
+	// 判断arr数组是否有序
+	template<typename T>
+	bool isSorted(T arr[], int n) {
+
+		for (int i = 0; i < n - 1; i++)
+			if (arr[i] > arr[i + 1])
+				return false;
+
+		return true;
+	}
+
+	// 整形数组拷贝
+	int* copyIntArray(int a[], int n) {
+		int * arr = new int[n];
+		// copy(a, a + n, arr);
+
+		for (int i = 0; i < n; i++) {
+			arr[i] = a[i];
+		}
+
+		return arr;
+	}
+
 	// 生成有n个元素的随机数组,每个元素的随机范围为[rangeL, rangeR]
 	int *generateRandomArray(int n, int range_l, int range_r) {
 
@@ -59,27 +83,4 @@ namespace SortTestHelper {
 		return;
 	}
 
-	// 判读是否排序成功
-	// 判断arr数组是否有序
-	template<typename T>
-	bool isSorted(T arr[], int n) {
-
-		for (int i = 0; i < n - 1; i++)
-			if (arr[i] > arr[i + 1])
-				return false;
-
-		return true;
-	}
-
-	// 整形数组拷贝
-	int* copyIntArray(int a[], int n) {
-		int * arr = new int[n];
-		// copy(a, a + n, arr);
-
-		for (int i = 0; i < n; i++) {
-			arr[i] = a[i];
-		}
-
-		return arr;
-	}
 }

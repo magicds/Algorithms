@@ -1,8 +1,8 @@
-﻿// all.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+// all.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
-#include "pch.h"
-#include <iostream>
+#include <iostream>;
+#include <math.h>;
 #include "sorttesthelper.h";
 #include "selectionSort.h";
 #include "insertionSort.h";
@@ -88,8 +88,6 @@ void testSortedArr(int n) {
 }
 int main()
 {
-	// testBubble();
-
 	int n = 10000;
 
 	cout << "\n 随机数组排序测试，长度：" << n << endl;

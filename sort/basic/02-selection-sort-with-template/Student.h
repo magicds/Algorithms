@@ -2,19 +2,20 @@
 #include <iostream>
 #include <string>
 using namespace std;
-struct Student {
+struct Student
+{
     string name;
     int score;
 
-    // ÷ÿ‘ÿ<‘ÀÀ„∑˚
-    bool operator <(const Student& oStudent) {
-        return score != oStudent.score ?
-            score < oStudent.score :
-            name < oStudent.name;
+    // ÈáçËΩΩ<ËøêÁÆóÁ¨¶
+    bool operator<(const Student &oStudent)
+    {
+        return score != oStudent.score ? score < oStudent.score : name < oStudent.name;
     }
 
-    // ÷ÿ‘ÿ<<∑˚∫≈, ∂®“ÂStudent µ¿˝µƒ¥Ú”° ‰≥ˆ∑Ω Ω
-    friend ostream& operator<<(ostream &os, const Student &student) {
+    // ÈáçËΩΩ<<Á¨¶Âè∑, ÂÆö‰πâStudentÂÆû‰æãÁöÑÊâìÂç∞ËæìÂá∫ÊñπÂºè
+    friend ostream &operator<<(ostream &os, const Student &student)
+    {
 
         os << "Student: " << student.name << " " << student.score << endl;
         return os;
